@@ -7,84 +7,187 @@
 $hover_color: #c1839f;
 $bg_header: #333;
 $text_color: #fff;
+$bg_color: #3c3c3c;
+$text_color: #f5f5f5;
+$efect_color: #ff5a5f;
+$efect_color2: #087e8b;
+// ====================
+// ============= Reset Global======================
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// ========= @Font-Face===========
+@font-face {
+    font-family: "Roboto_Mio";
+    src: url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
+}
+
 @font-face {
     font-family: "Oswald";
     src: url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap");
 }
 
-// ===============
+@font-face {
+    font-family: "Oxygen";
+    src: url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap");
+}
+
+// =====================
+// =======@mixin =============
+@mixin containe-grid($colum,
+$frac,
+$align) {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat($colum, $frac);
+    align-items: $align;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin sections {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+// ===========HEADER====
 .header {
     display: flex;
     width: 100%;
     // height: 70px;
     height: 4rem;
-    position: absolute;
+    position: fixed;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.335);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23392558' fill-opacity='0.06'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     font-family: "Oswald";
     color: white;
     padding: 0;
     z-index: 4;
+    overflow: hidden;
 }
 
 .absolute {
     position: relative;
-    // top: 0;
-    // left: 0;
-    // margin: auto;
-    z-index: 20;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-end;
+    // gap: 25px;
+    // margin: 2.625rem 2rem;
+    // padding: 0 .5rem;
     width: 90%;
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-}
-
-.bg_logo {
-    position: relative;
-    display: block;
-    padding: 1.2rem 1.3rem;
-    float: left;
-    height: 100%;
-    width: 150px;
-    background-size: contain !important;
-    background-position: center !important;
     // border: solid 1px white;
-    background-repeat: no-repeat !important;
-    // z-index: 10;
-}
-
-.menu {
-    display: flex;
-    flex: 1;
-    padding: 0.065rem;
-    // align-items: baseline;
-    // justify-content: space-around;
-    // font-weight: 300;
-    font-weight: normal;
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    a {
-        padding-left: 1.625rem;
-        cursor: pointer;
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 90%;
+    .header-left {
+        display: flex;
+        align-items: flex-end;
+        // border: solid 1px blue;
+        .header-text {
+            position: relative;
+            display: block;
+            float: left;
+            height: 100%;
+            width: auto;
+            text-align: center;
+            font-family: "ClearSans-Regular", "Helvetica", "Arial", "sans-serif";
+            font-size: 1rem;
+            // border: solid 1px green;
+            margin: 0;
+        }
+        .bg_logo {
+            position: relative;
+            display: block;
+            padding: 1.2rem 1.3rem;
+            // float: left;
+            height: 100%;
+            width: 150px;
+            background-size: contain !important;
+            background-position: center !important;
+            // border: solid 1px white;
+            background-repeat: no-repeat !important;
+        }
+    }
+    .menu {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        // border: solid 1px yellow;
+        .menu-button {
+            position: relative;
+            font-size: 0.7rem;
+            font-weight: 500;
+            line-height: 1.3rem;
+            white-space: nowrap;
+            vertical-align: middle;
+            cursor: pointer;
+            transform: translate(0);
+            overflow: hidden;
+            outline: none !important;
+            box-sizing: border-box;
+            // background-repeat: repeat-x;
+            // background-position: 1px 1px;
+            // background-size: 110% 110%;
+            color: #e6ebf1;
+            // background-color: #eff3f6;
+            // background-image: linear-gradient(-180deg, #e6ebf1, #eff3f6 100%);
+            border: solid 1px transparent;
+            border-radius: 0.25rem;
+            appearance: none;
+            padding: 1px 8px;
+            margin-left: 2px;
+            outline: 0;
+            min-width: 80px;
+            transition: all 1s;
+            &:hover {
+                // background-color: #e6ebf1;
+                // background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+                // background-position: -0.5rem;
+                border: solid 1px white;
+                // color: black;
+            }
         }
     }
 }
 
-// a:hover {
-//     box-sizing: border-box;
-//     border-bottom: solid 1px white;
-// }
+.page-active {
+    font-size: 0.85rem !important;
+    border: solid 1px white !important;
+}
+
+// =================================
+// =============== Nav Button ======
+.nav-description {
+    position: fixed;
+    font-size: 12px;
+    color: white;
+    width: calc(100% * 1 / 6);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 90px;
+}
+
+// =================================
 // @media (max-width: 440px) {
 //     .boton {
 //         display: flex;
@@ -152,4 +255,233 @@ a {
     // display: block;
     // border-bottom: solid 1px $hover_color;
     // }
+}
+
+// =================
+.screen1 {
+    position: relative;
+    background-image: url(../../Resources/img/fondo1.jpg);
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    // padding: 60px 50px;
+    &_center {
+        display: flex;
+        justify-content: center;
+        width: 90%;
+        position: relative;
+        top: 6rem;
+        left: 8rem;
+        // padding: 5px 10px;
+        // border: solid 1px white;
+        width: 100%;
+        // height: 24rem;
+        &_text {
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            color: white;
+            padding: 0 10px;
+            margin-left: 3rem;
+            width: calc(100% * 1 / 3);
+            // border: solid 1px red;
+            h1 {
+                font-family: "Oxygen";
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+                color: green;
+                // border: solid 1px black;
+                // background-color: black;
+            }
+            h2 {
+                font-family: "Oxygen";
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 1rem;
+                text-transform: uppercase;
+                // border: solid 1px violet;
+            }
+            h5 {
+                position: relative;
+                font-size: 0.75em;
+                font-family: "Roboto_Mio";
+                text-align: justify;
+                font-weight: 200;
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    border-bottom: solid 2px white;
+                    width: 40px;
+                }
+                &::before {
+                    left: -42px;
+                    bottom: 4px;
+                    // margin: 7% 0 0 -8%;
+                }
+                &::after {
+                    right: -42.5px;
+                    bottom: 4px;
+                }
+            }
+            button {
+                // position: absolute;
+                margin: 10px 0;
+                padding: 4px 10px;
+                border: solid 1px green;
+                border-radius: 3px;
+                overflow: hidden;
+                transition: all 0.5s;
+                &:hover {
+                    background-color: green;
+                    color: honeydew;
+                }
+            }
+        }
+    }
+}
+
+.h5 {
+    position: absolute;
+}
+
+.screen1_scroll_arrows {
+    // display: block;
+    position: absolute;
+    left: auto;
+    right: 10px;
+    bottom: 50px;
+    width: 50px;
+    // border: solid 1px white;
+    .oo {
+        display: block;
+        height: 12px;
+        width: 12px;
+        // transform: rotate(45deg);
+        // border: solid 1px white;
+        &::before,
+        &::after {
+            content: "";
+            height: 12px;
+            width: 12px;
+            display: block;
+            position: absolute;
+            border-bottom: solid 3px #666;
+            border-right: solid 3px #666;
+            top: 0;
+            left: 0;
+            transform: rotate(45deg);
+            animation: pulse 1s linear infinite;
+        }
+        &::before {
+            top: -50%;
+        }
+        &::after {
+            top: 50%;
+            animation-delay: 0.12s;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.slideInUp {
+    animation: slideInUp 2s;
+}
+
+.slideInleft {
+    animation: slideInLeft 2s;
+}
+
+@keyframes slideInleft {
+    form {
+        transform: translate(100%, 0);
+        opacity: 30%;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translate3d(0, 100%, 0);
+        visibility: visible;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// =======CARD BANNER ONE========
+.card_banner_one {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    background-color: rgba(0, 0, 0, 0.911);
+    // border-radius: 50px 0 0 0;
+    // background-image: url(../../Resources/img/fondo2.png);
+    // border: solid 1px blue;
+    .content2 {
+        @include containe-grid(2,
+        1fr,
+        flex-end);
+        // width: 90%;
+        // padding: 90px 0 0 30px;
+        color: white;
+        // border: yellow solid 1px;
+    }
+    h2 {
+        font-family: "Lato";
+        font-size: 1.5rem;
+        text-align: left;
+        margin-bottom: 1rem;
+        color: green;
+        text-transform: uppercase;
+        // border: solid 1px violet;
+    }
+    p {
+        font-family: "Roboto_Mio";
+        font-size: .8rem;
+        text-align: left;
+    }
+    button {
+        // position: absolute;
+        margin: 10px 0 0 10px;
+        box-sizing: border-box;
+        padding: 4px 10px;
+        border: solid 1px green;
+        border-radius: 3px;
+        overflow: hidden;
+        transition: all 0.5s;
+        &:hover {
+            background-color: green;
+            color: honeydew;
+        }
+    }
+}
+
+// ========= Section tow=======
+.section-tow {
+    @include sections;
+    background-color: #ff5a5f;
 }

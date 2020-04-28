@@ -1,17 +1,25 @@
-import React from "react"
-import "./Section_2/section_2.css";
-import "../styles/main.css";
+import React from "react";
+// import "./Section_2/section_2.css";
 import { ArrowForward } from "@material-ui/icons";
+import "../Components/Header/header.css";
 
-const Card_Banner = ()=>{
-    return (
-        <div className="card_banner_one">
-            <div className="content">
-                <h2>Especialidades de la casa</h2>
-                <p>Esto es una explicacion de todo lo que se puede hacer con un teclado a las 3 de la ma;ana despues de haber comido una buena cena y con un clima mas o menos agradable, sin tanto frio</p>
-                <a href="/" className="btn">Leer mas..<ArrowForward/></a>
-            </div>
+const Card_Banner = () => {
+  return (
+    <div className="card_banner_one">
+      <div className="content2">
+        <div>
+          <h2>Por que Elegirnos</h2>
+          <p>
+           Somos un equipo de profesionales que ofrecemos un servicio de calidad e innovador para tu negocio, logramos implementar las ideas y procesos que le aporten mas valor agregado a su producto o servicio.
+           En EpicBurst trabajamos para usted.
+          </p>
+          <button>
+            Leer mas..
+            <ArrowForward />
+          </button>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 export default Card_Banner;
