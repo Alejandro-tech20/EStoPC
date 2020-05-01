@@ -2,7 +2,7 @@
 const Menu=[
     {
         label: "Inicio",
-        pathname:"/"
+        pathname:"/home"
     },
     {
         label: "Soluciones",

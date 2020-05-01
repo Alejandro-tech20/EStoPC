@@ -1,0 +1,94 @@
+$decoration_main_text:#e6c81e;
+$bg_complementary: #87c665;
+// ============
+@font-face {
+    font-family: "Oswald";
+    src: url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+}
+
+@mixin relative {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    // grid-template-columns: repeat(2, 1fr);
+}
+
+.pg-services-section1 {
+    @include relative;
+    height: 50vh;
+    width: 100%;
+    background-repeat: no-repeat !important;
+    background-position: center center;
+    background-size: cover;
+    .container-main-text {
+        position: relative;
+        top: 50%;
+    }
+    .main-text {
+        position: relative;
+        font-family: "Oswald";
+        font-weight: 300;
+        font-size: 60px;
+        color: green;
+        line-height: 72px;
+        text-align: center;
+        text-transform: uppercase;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30%;
+            height: 2px;
+            border: solid 1px $decoration_main_text;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+        }
+    }
+    .seconds-text {
+        margin-top: 18px;
+        font-size: "Oswald - 300";
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 34px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+// ========= Section 2 =========
+@mixin container {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    padding: 10px 0;
+    width: 100%;
+    img {
+        width: 15%;
+        margin-right: 30px;
+    }
+}
+
+.section2 {
+    @include relative;
+    // width: 100%;
+    // height: 100vh;
+    // background: blueviolet;
+}
+
+.container1,
+.container2,
+.container3,
+.container4_4,
+.container5 {
+    @include container;
+}
+
+// ======= Section 3 =========
+.section3 {
+    position: relative;
+    background: $bg_complementary;
+    height: 70px;
+}

@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+
+import Header from "./Components/Header/Header";
+import Home from "./Pages/Home";
+import Soluciones from "./Pages/Solutiones";
 
 function App() {
+  const [isactive, setActive]= useState(0);
+  const choice=(inde)=>{
+    setActive(inde);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header active={1} fu={choice}/>
+
+        {/* Redirection */}
+        <Redirect from="/" to="/home" />
+        {/* Route */}
+        <Switch>
+          <Route path="/home" exact component={Home} />
+          <Route path="/soluction" component={Soluciones} />
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }
 

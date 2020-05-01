@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Oswald";
+  src: url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+}
+
+.pg-services-section1 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: auto;
+  height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat !important;
+  background-position: center center;
+  background-size: cover;
+}
+
+.pg-services-section1 .container-main-text {
+  position: relative;
+  top: 50%;
+}
+
+.pg-services-section1 .main-text {
+  position: relative;
+  font-family: "Oswald";
+  font-weight: 300;
+  font-size: 60px;
+  color: green;
+  line-height: 72px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pg-services-section1 .main-text::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 2px;
+  border: solid 1px #e6c81e;
+  left: 50%;
+  bottom: -15px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.pg-services-section1 .seconds-text {
+  margin-top: 18px;
+  font-size: "Oswald - 300";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section2 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+.container1,
+.container2,
+.container3,
+.container4_4,
+.container5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 10px 0;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.container1 img,
+.container2 img,
+.container3 img,
+.container4_4 img,
+.container5 img {
+  width: 15%;
+  margin-right: 30px;
+}
+
+.section3 {
+  position: relative;
+  background: #87c665;
+  height: 70px;
+}
+/*# sourceMappingURL=page-services.css.map */

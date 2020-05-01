@@ -13,7 +13,7 @@ import "../../Components/Header/header.css";
 const Section2 = () => {
   return (
     <div className="section-tow">
-      {/* <div className="section_2_container">
+       <div className="section_2_container">
         <div className="section_2_max_title">
           <h1 className="text-xl pb-0 sm:pb-0 lg:text-4x1 xl:text-4xl  ">
             Welcome to TsSupport
@@ -25,13 +25,13 @@ const Section2 = () => {
         </div>
 
         <div className="show-cards">
+         <Card img={dos} title="Branding" href="/" />
           <Card img={dos} title="Branding" href="/" />
           <Card img={dos} title="Branding" href="/" />
           <Card img={dos} title="Branding" href="/" />
           <Card img={dos} title="Branding" href="/" />
-          <Card img={dos} title="Branding" href="/" />
-        </div>
-      </div> */}
+        </div> 
+      </div> 
     </div>
   );
 };

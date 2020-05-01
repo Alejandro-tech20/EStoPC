@@ -1,4 +1,5 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./header.css";
 import logo from "../../Resources/img/logo.png";
 import "../../styles/main.css";
@@ -56,8 +57,13 @@ const PopoverMenu = forwardRef(function PopoverMenu(props, ref) {
     </ToggleLayer>
   );
 });
+// ============ Initial Point============
+const Header = ({ active, fu }) => {
+  const [act, setAct] = useState(0);
 
-const Header = () => {
+  const chage = (ind) => {
+    setAct(ind);
+  };
   return (
     <div className="header">
       <div className="absolute">
@@ -74,13 +80,16 @@ const Header = () => {
         {/* =======Links======= */}
         <div className="menu">
           {Menu_List.map((item, index) => (
-            <button
+            <Link
               key={item.label}
-              className={index===0 ? `menu-button page-active` : `menu-button`}
-              href={item.pathname}
+              className={
+                act === index ? `menu-button page-active` : `menu-button`
+              }
+              to={item.pathname}
+              onClick={(e) => chage(index)}
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
         {/* <PopoverMenu /> */}
